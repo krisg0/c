@@ -1,0 +1,31 @@
+#Declare variables where you need them
+void function(void) {
+    /* ... some code ... */
+    
+    double result = calculate_value();  // Declare when needed
+    char buffer[100];
+    
+    for (int i = 0; i < 10; i++) {  // Loop variable declared in for()
+        /* ... */
+    }
+    
+    struct data *item = malloc(sizeof(*item));  // Declare right before use
+}
+
+#For-loop Initial Declarations
+for (int i = 0; i < 10; i++) {
+    /* i only exists within loop */
+}
+// i is not accessible here
+
+#Designated Initializers (Very Useful for Structs/Arrays)
+struct point p = {.x = 1, .y = 2, .z = 3};  // Clear and order-independent
+struct point p2 = {.y = 5};  // x and z default to 0
+
+int arr[5] = {[2] = 5, [4] = 3};  // Only initialize indices 2 and 4
+
+#
+
+
+
+
