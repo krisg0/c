@@ -13,10 +13,14 @@ void function(void) {
 }
 
 #For-loop Initial Declarations
-for (int i = 0; i < 10; i++) {
-    /* i only exists within loop */
-}
-// i is not accessible here
+you can initialize multiple variables in a C for loop. 
+
+    // Multiple initialization, multiple conditions, multiple increments
+    for (int i = 0, j = 10; i < 5 && j > 5; i++, j--) {
+        printf("i=%d, j=%d\n", i, j);
+    /* i, j only exists within loop */
+    }
+    // i, j is not accessible here
 
 #Designated Initializers (Very Useful for Structs/Arrays)
 struct point p = {.x = 1, .y = 2, .z = 3};  // Clear and order-independent
