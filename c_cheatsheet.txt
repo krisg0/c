@@ -30,11 +30,7 @@ int arr[5] = {[2] = 5, [4] = 3};  // Only initialize indices 2 and 4
 
 #functions
 
-// Good
-double calculate(double x, double y);
-double calculate(double x, double y) {
-    return x * y;
-}
+##function prototype
 
 /* Must specify parameter types */
 int process_data(void);      // Explicitly no parameters
