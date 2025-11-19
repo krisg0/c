@@ -40,5 +40,8 @@ int find_max(int *array, int size);  // Full prototype required
 int compare(const void *, const void *);  // Names optional
 
 
+#pointers
 
+//Note how there is const modifier for the argv[]
+int main(int argc, const char *argv[]) { /*...*/ }
 
