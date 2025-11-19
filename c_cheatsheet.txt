@@ -42,6 +42,50 @@ int compare(const void *, const void *);  // Names optional
 
 #pointers
 
+##const
+Key Rules to Remember
+
+· const TYPE* - Pointer to constant data
+· TYPE* const - Constant pointer to modifiable data
+· const TYPE* const - Constant pointer to constant data
+· const applies to whatever is immediately to its left (or right if nothing to left)
+
 //Note how there is const modifier for the argv[]
 int main(int argc, const char *argv[]) { /*...*/ }
+
+//API design with const
+
+// Good: const indicates input parameters won't be modified
+size_t safe_string_length(const char* str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+
+// Good: const prevents modification of array elements
+int find_max(const int arr[], size_t size) {
+    if (size == 0) return -1;
+    
+    int max = arr[0];
+    for (size_t i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        // arr[i] = 0;  // ERROR: arr is const
+    }
+    return max;
+}
+
+// Good: const return value indicates caller shouldn't modify
+const char* get_database_path() {
+    return "/var/lib/myapp/database.db";
+}
+
+##function pointers
+typedef int (*Calculator)(int, int);
+
+int add(int a, int b) { return a + b; }
+int subtract(int a, int b) { return a - b; }
+
+##type cast point
+#define UART0 ((HardwareModule*)0x4000C000)
 
